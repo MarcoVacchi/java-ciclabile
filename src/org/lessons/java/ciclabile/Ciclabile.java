@@ -16,13 +16,19 @@ public class Ciclabile {
 
     public int getElementoSuccessivo() {
 
-        for (int i = 0; i < arrayInt.length; i++) {
-            if (currentIndex < arrayInt.length) {
-                currentIndex++;
-                return arrayInt[currentIndex - 1];
-            }
+        if (hasAncoraElementi()) {
+            return arrayInt[currentIndex++];
+
         }
         return -1;
+
+        // for (int i = 0; i < arrayInt.length; i++) {
+        // if (currentIndex < arrayInt.length) {
+        // currentIndex++;
+        // return arrayInt[currentIndex - 1];
+        // }
+        // }
+        // return -1;
     }
 
     public boolean hasAncoraElementi() {
