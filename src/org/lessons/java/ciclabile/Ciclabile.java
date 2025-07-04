@@ -19,10 +19,19 @@ public class Ciclabile {
             }
         }
         return -1;
+    }
 
-    };
+    public boolean hasAncoraElementi() {
+        if (currentIndex >= arrayInt.length) {
+            return false;
+        }
+        return true;
+    }
 
 }
+
+// - boolean hasAncoraElementi() (che deve restituire true se ci sono ancora
+// elementi da restituire)
 
 // Vogliamo realizzare una classe che contenga un elenco di interi e che ci
 // permetta di ciclarli (dal primo all’ultimo).
@@ -31,8 +40,6 @@ public class Ciclabile {
 // - int getElementoSuccessivo() (che restituisce il prossimo elemento rispetto
 // all’ultima volta che è stato invocato. Cioè la prima volta restituisce il
 // primo elemento, la seconda volta il secondo, …)
-// - boolean hasAncoraElementi() (che deve restituire true se ci sono ancora
-// elementi da restituire)
 
 // La classe deve avere un costruttore che prende come parametro un array di
 // interi (che sarà l’elenco che viene gestito internamente)
