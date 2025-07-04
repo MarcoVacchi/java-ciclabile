@@ -2,13 +2,17 @@ package org.lessons.java.ciclabile;
 
 public class Ciclabile {
 
-    public int[] arrayInt = {};
-    public int currentIndex = 0;
+    private int[] arrayInt = {};
+    private int currentIndex = 0;
 
     public Ciclabile(int[] arrayInt) {
         this.arrayInt = arrayInt;
 
     }
+
+    public Ciclabile() {
+        this.arrayInt = new int[0];
+    };
 
     public int getElementoSuccessivo() {
 
@@ -28,24 +32,15 @@ public class Ciclabile {
         return true;
     }
 
+    public void addElemento(int addNumber) {
+        int[] newArrayInt = new int[this.arrayInt.length + 1];
+        for (int i = 0; i < this.arrayInt.length; i++) {
+            newArrayInt[i] = arrayInt[i];
+        }
+        newArrayInt[newArrayInt.length - 1] = addNumber;
+        arrayInt = newArrayInt;
+    }
 }
-
-// - boolean hasAncoraElementi() (che deve restituire true se ci sono ancora
-// elementi da restituire)
-
-// Vogliamo realizzare una classe che contenga un elenco di interi e che ci
-// permetta di ciclarli (dal primo all’ultimo).
-
-// Dovrà offrire due metodi :
-// - int getElementoSuccessivo() (che restituisce il prossimo elemento rispetto
-// all’ultima volta che è stato invocato. Cioè la prima volta restituisce il
-// primo elemento, la seconda volta il secondo, …)
-
-// La classe deve avere un costruttore che prende come parametro un array di
-// interi (che sarà l’elenco che viene gestito internamente)
-
-// Internamente alla classe vogliamo mantenere l’elenco di interi come array, no
-// ArrayList o simili.
 
 // Bonus :
 // prevedere anche un costruttore che non prenda parametri e un metodo
